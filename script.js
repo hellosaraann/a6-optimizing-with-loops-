@@ -29,25 +29,18 @@ var churchillSpeech = {
 
     i = 0;
 
-for( i = 0 ; i < speechesArray.length ; i++ ){
-  if( speechesArray[i].year < oldestSpeechYear ){
-    var oldestSpeechYear = speechesArray[i].year;
-  }
-}
 
-for( i = 0 ; i < speechesArray.length ; i++ ){
-  if( speechesArray[i].year > newestSpeechYear ){
-    var newestSpeechYear = speechesArray[i].year;
-  }
-}
-
+//speech tracker
 while( i < speechesArray.length ) {
-  console.log( "This speech is written by " + speechesArray[i].author + ".");
+  console.log( "This speech is written by " + speechesArray[i].author + "." );
   i++ ;
 };
 
 
+//favorite speech prompt & response
+
 document.getElementById('BtnDonate').addEventListener('click', function(){
+
   favoriteSpeechPrompt = window.prompt('Which speech author is your favorite?');
 
   for( i = 0 ; i < speechesArray.length ; i++ ){
@@ -58,6 +51,23 @@ document.getElementById('BtnDonate').addEventListener('click', function(){
 
 });
 
+
+//find oldest and newest speeches in speechesArray
+
+for( i = 0 ; i < speechesArray.length ; i++ ){
+  if( speechesArray[i].year < oldestSpeechYear ){
+    var oldestSpeechYear = speechesArray[i].year;
+  };
+};
+
+for( i = 0 ; i < speechesArray.length ; i++ ){
+  if( speechesArray[i].year > newestSpeechYear ){
+    var newestSpeechYear = speechesArray[i].year;
+  };
+};
+
+
+//click events for author buttons
 
 document.getElementById('BtnChurchill').addEventListener('click', function(){
 

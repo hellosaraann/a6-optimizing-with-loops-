@@ -31,10 +31,22 @@ var churchillSpeech = {
 
 
 //speech tracker
+
 while( i < speechesArray.length ) {
   console.log( "This speech is written by " + speechesArray[i].author + "." );
   i++ ;
 };
+/*NOTE: I wanted to figure out how to do this ^above^ when I scrolled by a certain class name, but couldn't figure out how to make that work! I tried:
+
+while( i < speechesArray.length ) {
+  document.querySelectorAll( '.speeches' ).addEventListener( 'scroll', function(){
+    console.log( "This speech is written by " + speechesArray[i].author + "." )
+  });
+  i++ ;
+};
+
+And I also tried starting with the document query, but couldn't get that to work either. :)
+*/
 
 
 //favorite speech prompt & response
